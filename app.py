@@ -19,26 +19,45 @@ def quiz():
 # ---------------- SUBMIT ----------------
 @app.route('/submit', methods=['POST'])
 def submit():
-    age = request.form['age']
-    gender = request.form['gender']
-    stream = request.form['stream']
+    # Demographic data
+    age = request.form.get('age')
+    gender = request.form.get('gender')
+    stream = request.form.get('stream')
 
-    love = request.form['love']
-    skill = request.form['skill']
-    mission = request.form['mission']
-    money = request.form['money']
+    # Collect 20 answers
+    answers = []
+    for i in range(1, 21):
+        answers.append(request.form.get(f"q{i}"))
 
     # -------- SIMPLE IKIGAI LOGIC --------
-    if love == "Technology" and skill == "Problem Solving":
+    tech_score = sum(1 for a in answers if a in ["Technology","Coding","Developer","Tech"])
+    help_score = sum(1 for a in answers if a in ["Helping","Teaching","Advice","Teacher"])
+    business_score = sum(1 for a in answers if a in ["Business","Entrepreneur","Managing"])
+    creative_score = sum(1 for a in answers if a in ["Art","Creative","Design","Creating"])
+    science_score = sum(1 for a in answers if a in ["Science","Research","Lab","Analyzing"])
+
+    scores = {
+        "Technology": tech_score,
+        "Helping": help_score,
+        "Business": business_score,
+        "Creative": creative_score,
+        "Science": science_score
+    }
+
+    # Pick highest category
+    career_type = max(scores, key=scores.get)
+
+    # Map to career
+    if career_type == "Technology":
         career = "Software Developer / Data Analyst"
-    elif love == "Helping People" and skill == "Communication":
+    elif career_type == "Helping":
         career = "Teacher / Counselor"
-    elif love == "Business" and skill == "Leadership":
+    elif career_type == "Business":
         career = "Entrepreneur / Manager"
-    elif love == "Art & Creativity":
+    elif career_type == "Creative":
         career = "Designer / Content Creator"
     else:
-        career = "Explore multidisciplinary careers"
+        career = "Scientist / Researcher"
 
     # -------- SAVE TO CSV --------
     file_exists = os.path.isfile('data.csv')
@@ -46,19 +65,12 @@ def submit():
     with open('data.csv', 'a', newline='') as f:
         writer = csv.writer(f)
 
-        # Add header if file is empty
+        # Add header if file is new
         if not file_exists:
-            writer.writerow([
-                "Age", "Gender", "Stream",
-                "Love", "Skill", "Mission", "Money",
-                "Career"
-            ])
+            header = ["Age", "Gender", "Stream"] + [f"Q{i}" for i in range(1, 21)] + ["Career"]
+            writer.writerow(header)
 
-        writer.writerow([
-            age, gender, stream,
-            love, skill, mission, money,
-            career
-        ])
+        writer.writerow([age, gender, stream] + answers + [career])
 
     return render_template('result.html', career=career)
 
@@ -75,7 +87,7 @@ def dashboard():
     except:
         data = []
 
-    total = len(data) - 1 if len(data) > 0 else 0  # remove header
+    total = len(data) - 1 if len(data) > 0 else 0
 
     return render_template('dashboard.html', data=data, total=total)
 
