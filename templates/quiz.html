@@ -1,160 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Ikigai Quiz</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-
-<style>
-body{
-font-family:Poppins;
-background:#f4f4f4;
-padding:40px;
-}
-
-.container{
-max-width:800px;
-margin:auto;
-background:white;
-padding:30px;
-border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
-
-h2{text-align:center;margin-bottom:20px}
-
-.question{
-margin:20px 0;
-}
-
-label{
-display:block;
-margin:5px 0;
-cursor:pointer;
-}
-
-button{
-margin-top:20px;
-width:100%;
-padding:12px;
-background:#ffb347;
-border:none;
-border-radius:8px;
-font-weight:bold;
-cursor:pointer;
-}
-</style>
-
+<title>Quiz</title>
 </head>
-
 <body>
 
-<div class="container">
-
-<h2>Ikigai Self-Discovery Quiz</h2>
+<h1>Ikigai Self-Discovery Quiz</h1>
 
 <form action="/submit" method="POST">
 
-<!-- DEMOGRAPHIC -->
-<div class="question">
 <label>Age:</label>
 <select name="age">
 <option>16-18</option>
 <option>18-20</option>
 </select>
-</div>
+<br><br>
 
-<div class="question">
 <label>Gender:</label>
 <select name="gender">
 <option>Female</option>
 <option>Male</option>
 <option>Other</option>
 </select>
-</div>
+<br><br>
 
-<div class="question">
 <label>Stream:</label>
 <select name="stream">
 <option>Science</option>
 <option>Commerce</option>
 <option>Arts</option>
 </select>
-</div>
+<br><br>
 
-<!-- QUESTIONS -->
+<p>Sample Question:</p>
+<label><input type="radio" name="q1" value="Technology" required> Technology</label>
+<label><input type="radio" name="q1" value="Helping"> Helping</label>
+<label><input type="radio" name="q1" value="Business"> Business</label>
+<label><input type="radio" name="q1" value="Creative"> Creative</label>
+<label><input type="radio" name="q1" value="Science"> Science</label>
 
-<!-- Repeat pattern -->
-<script>
-const questions = [
-"Activity you love most?",
-"Free time activity?",
-"Favorite subject?",
-"Dream activity without pressure?",
-"Strongest skill?",
-"People ask help for?",
-"Easiest task?",
-"Proud achievement?",
-"Problem you care about?",
-"How you help society?",
-"Change you want?",
-"Issue that bothers you?",
-"Work you want to earn from?",
-"Exciting career?",
-"Preferred work environment?",
-"Most valuable skill?",
-"Motivation?",
-"Work style?",
-"Personality type?",
-"Future goal?"
-];
-
-const options = [
-["Technology","Art","Helping","Business","Science"],
-["Tech","Creative","Social","Planning","Learning"],
-["IT","Arts","Social","Business","Science"],
-["Build tech","Create art","Help people","Start business","Research"],
-["Problem solving","Communication","Creativity","Leadership","Analysis"],
-["Tech help","Advice","Design","Organizing","Explaining"],
-["Fixing","Talking","Creating","Managing","Analyzing"],
-["Solved problem","Helped someone","Created something","Led group","Academic"],
-["Tech access","Education","Environment","Business","Science"],
-["Innovation","Teaching","Creative","Jobs","Research"],
-["Digital growth","Better education","Creative freedom","Economy","Science"],
-["Tech gap","Guidance","Creativity","Opportunity","Knowledge"],
-["Coding","Teaching","Business","Design","Research"],
-["Developer","Teacher","Entrepreneur","Designer","Scientist"],
-["Company","School","Studio","Office","Lab"],
-["Tech","Communication","Creativity","Leadership","Analysis"],
-["Money","Helping","Creativity","Success","Discovery"],
-["Alone","With people","Creative","Leading","Research"],
-["Logical","Friendly","Creative","Leader","Curious"],
-["Tech career","Social impact","Creative life","Business success","Science"]
-];
-
-document.write("");
-
-for(let i=0;i<20;i++){
-document.write(`<div class="question">
-<p>${i+1}. ${questions[i]}</p>`);
-
-for(let j=0;j<options[i].length;j++){
-document.write(`
-<label>
-<input type="radio" name="q${i+1}" value="${options[i][j]}" required>
-${options[i][j]}
-</label>`);
-}
-
-document.write(`</div>`);
-}
-</script>
-
-<button type="submit">Submit Quiz</button>
+<button type="submit">Submit</button>
 
 </form>
-
-</div>
 
 </body>
 </html>
