@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="section">
+    <h1>Your Career Insights</h1>
+
+    <p id="resultText"></p>
+
+    <!-- FUN INSIGHT BOX -->
+    <div class="insight-box">
+        <h3>💡 Quick Advice</h3>
+        <p id="advice"></p>
+    </div>
+
+    <!-- TABLEAU DASHBOARD -->
+    <iframe 
+        src="https://public.tableau.com/views/SurvayStoryPoint/Story1"
+        width="100%" height="600">
+    </iframe>
+
+</div>
+
+<script>
+let data = JSON.parse(localStorage.getItem("quizData"));
+
+let confidence = parseInt(data?.confidence || 5);
+
+let result = "";
+let advice = "";
+
+if (confidence < 4) {
+    result = "You need more exploration.";
+    advice = "Try exploring different careers and talk to mentors.";
+}
+else if (confidence < 7) {
+    result = "You are on the right track.";
+    advice = "Focus on building skills and gaining experience.";
+}
+else {
+    result = "You are confident and ready!";
+    advice = "Start applying your skills in real-world projects.";
+}
+
+document.getElementById("resultText").innerText = result;
+document.getElementById("advice").innerText = advice;
+</script>
+
+</body>
+</html>

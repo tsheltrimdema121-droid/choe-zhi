@@ -1,0 +1,278 @@
+/* GLOBAL */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #0b0b0b;
+    color: white;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: #111;
+}
+
+.navbar h2 {
+    margin: 0;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #ffb347;
+}
+
+/* HERO */
+.hero {
+    position: relative;
+    height: 90vh;
+    background: url('static/images/hero.jpg') center/cover no-repeat;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+
+.hero-content {
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    max-width: 500px;
+}
+
+.hero h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    line-height: 1.6;
+}
+
+.hero button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #ffb347;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.hero button:hover {
+    transform: scale(1.05);
+    background: #ffa733;
+}
+
+/* SECTION (LIGHT BACKGROUND LIKE YOUR DESIGN) */
+.section {
+    padding: 60px;
+    text-align: center;
+    background: #f5f5f5;
+    color: black;
+}
+
+/* HEADINGS */
+.sub {
+    color: orange;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+.desc {
+    max-width: 600px;
+    margin: 10px auto;
+    color: #555;
+}
+
+/* CARDS */
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.card {
+    width: 220px;
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+    height: 130px;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin: 10px 0 5px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #555;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+/* CARD COLORS */
+.green { border-top: 4px solid #4CAF50; }
+.orange { border-top: 4px solid #ff9800; }
+.blue { border-top: 4px solid #2196F3; }
+.pink { border-top: 4px solid #e91e63; }
+.purple { border-top: 4px solid #9c27b0; }
+
+/* DASHBOARD BUTTON */
+.dashboard-btn {
+    margin-top: 30px;
+    padding: 12px 25px;
+    background: #222;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dashboard-btn:hover {
+    background: #444;
+}
+
+/* MORE SECTION */
+.more {
+    padding: 60px;
+    text-align: center;
+    background: #0b0b0b;
+}
+
+.more h2 {
+    margin-bottom: 10px;
+}
+
+.more-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.mini {
+    background: #111;
+    padding: 20px;
+    width: 180px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.mini:hover {
+    transform: translateY(-5px);
+    background: #1a1a1a;
+}
+
+.mini h4 {
+    margin-bottom: 10px;
+}
+
+/* DASHBOARD PAGE */
+.insight-box {
+    background: #111;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+/* REPORT PAGE */
+.section h1 {
+    margin-bottom: 20px;
+}
+
+/* IFRAME (TABLEAU) */
+iframe {
+    border: none;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+/* RESPONSIVE (IMPORTANT) */
+@media (max-width: 768px) {
+
+    .hero-content {
+        left: 5%;
+        top: 25%;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .more-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+    /* REPORT PAGE */
+.report-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px;
+    background: white;
+    color: black;
+    border-radius: 10px;
+    line-height: 1.7;
+}
+
+.report-container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.report-container h2 {
+    margin-top: 30px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+
+.report-container h3 {
+    margin-top: 20px;
+}
+
+.report-container p {
+    color: #444;
+}
+
+.report-container ul {
+    padding-left: 20px;
+}
+}
