@@ -14,30 +14,41 @@
 
 <div class="glass-box">
 
-    <h1>Career Quiz</h1>
+<h1>Career Readiness Quiz</h1>
 
-    <form id="quizForm">
-        <input type="text" id="name" placeholder="Your Name"><br><br>
+<form id="quizForm">
 
-        <label>Confidence (1–10)</label><br>
-        <input type="range" id="confidence" min="1" max="10"><br><br>
+<input type="text" id="name" placeholder="Your Name"><br><br>
 
-        <button type="submit">Submit</button>
-    </form>
+<label>What do you enjoy most?</label>
+<select id="interest">
+<option>Technology</option>
+<option>Helping People</option>
+<option>Business</option>
+<option>Creative Work</option>
+</select><br><br>
+
+<label>Confidence Level</label>
+<input type="range" id="confidence" min="1" max="10"><br><br>
+
+<button type="submit">See Result</button>
+
+</form>
 
 </div>
 
 <script>
 document.getElementById("quizForm").addEventListener("submit", function(e){
-    e.preventDefault();
+e.preventDefault();
 
-    let data = {
-        name: document.getElementById("name").value,
-        confidence: document.getElementById("confidence").value
-    };
+let data = {
+name: document.getElementById("name").value,
+interest: document.getElementById("interest").value,
+confidence: document.getElementById("confidence").value
+};
 
-    localStorage.setItem("quizData", JSON.stringify(data));
-    window.location.href = "result.html";
+localStorage.setItem("quizData", JSON.stringify(data));
+window.location.href = "result.html";
 });
 </script>
 

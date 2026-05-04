@@ -2,12 +2,17 @@
 <html>
 <head>
     <title>Choe Zhi</title>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- FONT -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <div class="navbar">
     <h2>Choe Zhi</h2>
     <div>
@@ -18,6 +23,7 @@
     </div>
 </div>
 
+<!-- HERO -->
 <div class="hero">
     <div class="overlay"></div>
 
@@ -25,23 +31,67 @@
         <h1>Discover Your Purpose</h1>
 
         <p>
-            I am currently an intern at <b>Bhutan Data Scientist</b>.
-            This project was developed to build a <b>Bhutanese version of Ikigai</b>,
-            helping students understand their strengths, interests, and future paths.
+            I am currently an intern at <b>Bhutan Data Scientist</b>.  
+            This project was developed to create a <b>Bhutanese version of Ikigai</b>, 
+            helping students understand their strengths, interests, and future 
+            career paths in a simple and meaningful way.
         </p>
 
-        <button onclick="scrollToProject()">Start Exploring →</button>
+        <a href="quiz.html">
+            <button>Start Your Journey →</button>
+        </a>
     </div>
+</div>
+
+<!-- IKIGAI SECTION -->
+<div class="section dark">
+
+    <h2>Ikigai Framework</h2>
+
+    <div class="ikigai">
+
+        <div class="circle">❤️ Passion</div>
+        <div class="circle">💡 Skills</div>
+        <div class="circle">💰 Income</div>
+        <div class="circle">🌍 Impact</div>
+
+    </div>
+
+</div>
+
+<!-- IKIGAI EXPLANATION -->
+<div class="glass-box" style="margin-top:40px;">
+
+    <h2>What is Ikigai?</h2>
+
+    <p>
+        Ikigai is a Japanese concept meaning “a reason to live.”
+        It connects four important areas of life:
+    </p>
+
+    <ul>
+        <li><b>What you love (Passion)</b></li>
+        <li><b>What you are good at (Skills)</b></li>
+        <li><b>What the world needs (Impact)</b></li>
+        <li><b>What you can be paid for (Income)</b></li>
+    </ul>
+
+    <p>
+        This project adapts Ikigai into a Bhutanese context to help students
+        make clearer, more confident, and meaningful career decisions.
+    </p>
+
 </div>
 
 <!-- PROJECT FINDINGS -->
 <div id="project" class="section">
 
     <h4 class="sub">ABOUT MY PROJECT</h4>
-    <h2>Some Key Findings</h2>
+    <h2>Key Findings from Survey</h2>
 
     <p class="desc">
-        Insights from survey responses about student career readiness.
+        These insights highlight the current situation of students after Grade 12,
+        including their confidence, challenges, and future readiness.
     </p>
 
     <div class="cards">
@@ -49,31 +99,31 @@
         <div class="card green">
             <img src="static/images/culture.jpg">
             <h3>Career Awareness</h3>
-            <p>Many students are still exploring their future paths.</p>
+            <p>Many students are still unsure about their future direction.</p>
         </div>
 
         <div class="card orange">
             <img src="static/images/lama.jpg">
-            <h3>Skills Development</h3>
-            <p>Students want practical and job-ready skills.</p>
+            <h3>Skill Development</h3>
+            <p>Students want more practical and real-world skills.</p>
         </div>
 
         <div class="card blue">
             <img src="static/images/hero.jpg">
             <h3>Purpose & Impact</h3>
-            <p>Students seek meaningful and impactful careers.</p>
+            <p>Students seek meaningful careers that contribute to society.</p>
         </div>
 
         <div class="card pink">
             <img src="static/images/people.jpg">
-            <h3>Cultural Values</h3>
-            <p>Bhutanese culture plays a role in career choices.</p>
+            <h3>Cultural Influence</h3>
+            <p>Family and culture strongly influence decisions.</p>
         </div>
 
         <div class="card purple">
             <img src="static/images/us.jpg">
             <h3>Future Outlook</h3>
-            <p>Students are hopeful but need guidance.</p>
+            <p>Students are hopeful but need better guidance.</p>
         </div>
 
     </div>
@@ -85,41 +135,38 @@
 </div>
 
 <!-- EXTRA FEATURES -->
-<div class="more">
+<div class="section dark">
 
     <h2>More For You</h2>
 
-    <div class="more-cards">
+    <div class="cards">
 
-        <div class="mini">
-            <h4>🎯 Career Suggestions</h4>
-            <p>Explore possible career paths.</p>
+        <div class="card">
+            <h3>🎯 Career Suggestions</h3>
+            <p>Get personalized career paths based on your answers.</p>
         </div>
 
-        <div class="mini">
-            <h4>📊 Confidence Meter</h4>
-            <p>See your readiness level.</p>
+        <div class="card">
+            <h3>📊 Confidence Meter</h3>
+            <p>Understand how ready you are for your future.</p>
         </div>
 
-        <div class="mini">
-            <h4>🧠 Know Yourself</h4>
-            <p>Understand your strengths.</p>
+        <div class="card">
+            <h3>🧠 Skill Builder</h3>
+            <p>Discover skills you need for your dream career.</p>
         </div>
 
-        <div class="mini">
-            <h4>📚 Learning Path</h4>
-            <p>Discover what to study next.</p>
-        </div>
-
-        <div class="mini">
-            <h4>💡 Advice</h4>
-            <p>Guidance based on data insights.</p>
+        <div class="card">
+            <h3>💡 Smart Advice</h3>
+            <p>Receive guidance based on real data insights.</p>
         </div>
 
     </div>
 
 </div>
 
+<!-- SCRIPT -->
 <script src="script.js"></script>
+
 </body>
 </html>
