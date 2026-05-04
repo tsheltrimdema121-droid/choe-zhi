@@ -1,126 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="style.css">
+<title>Result</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body class="bg-page">
 
 <div class="navbar">
-    <h2>Choe Zhi</h2>
-    <a href="index.html">Home</a>
+<h2>Choe Zhi</h2>
+<a href="index.html">Home</a>
 </div>
 
 <div class="glass-box">
 
-<h1>Your Career Insight</h1>
-
+<h1>Your Result</h1>
 <h3 id="user"></h3>
 
-<!-- CONFIDENCE BAR -->
-<div class="bar">
-    <div id="fill"></div>
-</div>
-
+<div class="bar"><div id="fill"></div></div>
 <p id="confidenceText"></p>
 
-<!-- BADGE -->
-<h3 id="badge"></h3>
-
-<!-- CAREER SUGGESTION -->
-<div class="insight-box">
-    <h3>🎯 Suggested Career</h3>
-    <p id="career"></p>
-</div>
-
-<!-- SKILLS -->
-<div class="insight-box">
-    <h3>🧠 Skills You Should Build</h3>
-    <p id="skills"></p>
-</div>
-
-<!-- ADVICE -->
-<div class="insight-box">
-    <h3>💡 Advice For You</h3>
-    <p id="advice"></p>
-</div>
-
-<!-- TABLEAU -->
-<iframe src="https://public.tableau.com/views/SurvayStoryPoint/Story1"
-width="100%" height="400"></iframe>
+<div class="insight-box"><h3>Career</h3><p id="career"></p></div>
+<div class="insight-box"><h3>Skills</h3><p id="skills"></p></div>
+<div class="insight-box"><h3>Advice</h3><p id="advice"></p></div>
 
 </div>
 
-<script>
+<!-- EXTRA -->
+<div class="section">
+<h2>More For You</h2>
+<div class="cards">
+<div class="card">🎯 Career Suggestions</div>
+<div class="card">📊 Confidence Meter</div>
+<div class="card">🧠 Skill Builder</div>
+<div class="card">💡 Advice</div>
+</div>
+</div>
 
-let data = JSON.parse(localStorage.getItem("quizData"));
-
-let name = data?.name || "Student";
-let interest = data?.interest || "Technology";
-let confidence = parseInt(data?.confidence || 5);
-
-document.getElementById("user").innerText = "Hello " + name;
-
-/* CONFIDENCE BAR */
-document.getElementById("fill").style.width = (confidence * 10) + "%";
-
-/* CONFIDENCE TEXT */
-let level = "";
-if (confidence < 4) level = "Low Confidence";
-else if (confidence < 7) level = "Moderate Confidence";
-else level = "High Confidence";
-
-document.getElementById("confidenceText").innerText = level;
-
-/* BADGE SYSTEM */
-let badge = "";
-if (confidence < 4) badge = "🌱 Explorer";
-else if (confidence < 7) badge = "🛠 Builder";
-else badge = "🚀 Career Ready";
-
-document.getElementById("badge").innerText = badge;
-
-/* CAREER + SKILLS */
-let career = "";
-let skills = "";
-
-if (interest === "Technology") {
-    career = "Software Developer / Data Scientist";
-    skills = "Python, Problem Solving, Data Analysis";
-}
-else if (interest === "Helping People") {
-    career = "Teacher / Counselor / Social Worker";
-    skills = "Communication, Empathy, Leadership";
-}
-else if (interest === "Business") {
-    career = "Entrepreneur / Manager";
-    skills = "Finance, Marketing, Decision Making";
-}
-else {
-    career = "Designer / Artist";
-    skills = "Creativity, Design Tools, Innovation";
-}
-
-document.getElementById("career").innerText = career;
-document.getElementById("skills").innerText = skills;
-
-/* ADVICE */
-let advice = "";
-
-if (confidence < 4) {
-    advice = "Explore different fields. Try internships and talk to mentors.";
-}
-else if (confidence < 7) {
-    advice = "Focus on building your skills and gaining experience.";
-}
-else {
-    advice = "Start applying your skills in real-world projects and opportunities.";
-}
-
-document.getElementById("advice").innerText = advice;
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
